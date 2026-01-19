@@ -31,7 +31,7 @@ int main() {
                 cout << "INSTRUKCJA GRY:\n";
                 cout << "Aby rozpocząć grę, należy wejść w \"Rozpocznij grę\"\n";
                 cout << "Po czym wybrać poziom trudność i zgadnąć liczbę !\n";
-                cout << "TRYB EKSTREMALNY - W tym trybie, gracz zgaduje liczbę w zakresie od 1 do 300,\nprzy 5 nietrafionych liczba zgadywana ulega zmianie!\n";
+                cout << "TRYB EKSTREMALNY - W tym trybie, gracz zgaduje liczbę w zakresie od 1 do 250,\nprzy 5 nietrafionych liczba zgadywana ulega zmianie!\n";
                 cout << "1. Wyjście\n";
 
                 cin >> select;

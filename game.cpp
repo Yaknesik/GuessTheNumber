@@ -32,7 +32,7 @@ void startGame(int difficulty) {
         "Za dużo, próbuj dalej!",
         "Nie, liczba jest niższa!",
         "Nie zgadłeś, spróbuj mniejszą!"
-    }
+    };
 
 
     int maxNumber;
@@ -54,17 +54,17 @@ void startGame(int difficulty) {
 
     int tries = 0;
 
-    cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " + maxNumber << "!\n";
+    cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
 
     do {
-        cout << "Próba nr " << tries << " Twój strzał:";
-        cin >> guess
+        cout << "Próba nr " << tries << " Twój strzał: ";
+        cin >> guess;
 
         if(!cin || guess <= 0 || guess > maxNumber) {
-            cout << "BŁĄD! Proszę wpisać tylko liczbę (nie używamy liter!), która jest w zakresie od 1 do" + maxNumber << "!\n";
+            cout << "BŁĄD! Proszę wpisać tylko liczbę (nie używamy liter!), która jest w zakresie od 1 do" << maxNumber << "!\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            if(extreme) {
+            if(extremeMode) {
                 tries++;
                 cout << "W trybie ekstremalnym, nawet pomyłki liczą się jako próby ;)!\n";
             };
@@ -73,21 +73,20 @@ void startGame(int difficulty) {
 
         tries++;
 
-        if(guess < number) {
+        if(guess < randomNumber) {
             int randomLow = rand() % tooLow.size();
             cout << tooLow[randomLow] << endl;
-        };
-
-        else if (guess > number) {
+        } else if (guess > randomNumber) {
             int randomHigh = rand() % tooHigh.size();
             cout << tooHigh[randomHigh] << endl;
-        };
+        }
         else 
-            cout << "Brawo! Odgadnięto liczbę \"" << number << "\" w " << tries << "próbach!\n";
+            cout << "Brawo! Odgadnięto liczbę \"" << randomNumber << "\" w " << tries << " próbach!\n";
 
-            if(extreme && tries % 5 == 0 %% guess != number) {
-                number = rand() % maxNumber + 1;
-                cout << "LICZBA ZOSTAŁA ZMIENIONA!!!\n";
-            }
-    } while (guess != number);
+        if(extremeMode && tries % 5 == 0 && guess != randomNumber) {
+            randomNumber = rand() % maxNumber + 1;
+            cout << "LICZBA ZOSTAŁA ZMIENIONA!!!\n";
+        }
+
+    } while (guess != randomNumber);
 };
