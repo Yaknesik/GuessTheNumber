@@ -15,10 +15,10 @@ int main() {
         switch (select) {
             case 1:
                 int difficulty;
-                cout << "Wybierz poziom trudności!";
-                cout << "1. Łatwy (1-50)";
-                cout << "2. Średni (1-125)";
-                cout << "3. Trudny (1-250)";
+                cout << "Wybierz poziom trudności!\n";
+                cout << "1. Łatwy (1-50)\n";
+                cout << "2. Średni (1-125)\n";
+                cout << "3. Trudny (1-250)\n";
                 cout << "4. Ekstremalny (1-250 + reset zgadywanej liczby co 5 prób)\n";
 
                 cin >> difficulty;
