@@ -36,6 +36,8 @@ int main() {
 
                 cin >> select;
 
+                cout << string(100, '\n');
+
                 break;
             
             case 3:
