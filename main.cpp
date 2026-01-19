@@ -1,4 +1,5 @@
 #include <iostream>
+#include "game.h"
 using namespace std;
 
 int main() {
@@ -22,6 +23,8 @@ int main() {
 
                 cin >> difficulty;
 
+                startGame(difficulty);
+                
                 break;
 
             case 2:
@@ -36,7 +39,7 @@ int main() {
                 break;
             
             case 3:
-                cout << "Wyjście z gry."
+                cout << "Wyjście z gry.";
                 return 0;
 
             default:
