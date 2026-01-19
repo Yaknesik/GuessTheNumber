@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 
@@ -54,7 +55,12 @@ void startGame(int difficulty) {
 
     int tries = 0;
 
+    cout << "\nPierw, podaj swoje imię: ";
+    string name;
+    cin >> name;
+
     cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
+
 
     do {
         cout << "Próba nr " << tries << " Twój strzał: ";
@@ -79,9 +85,16 @@ void startGame(int difficulty) {
         } else if (guess > randomNumber) {
             int randomHigh = rand() % tooHigh.size();
             cout << tooHigh[randomHigh] << endl;
-        }
-        else 
+        } else {
             cout << "Brawo! Odgadnięto liczbę \"" << randomNumber << "\" w " << tries << " próbach!\n";
+
+            ofstream outFile("wyniki.txt", ios::app);
+            if(outFile.is_open()) {
+                outFile << difficulty << "," << tries << "," << name << endl;
+                outFile.close();
+                cout << "Wynik został zapisany!\n";
+            }
+        }
 
         if(extremeMode && tries % 5 == 0 && guess != randomNumber) {
             randomNumber = rand() % maxNumber + 1;
