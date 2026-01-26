@@ -35,16 +35,15 @@ void startGame(int difficulty) {
         "Nie zgadłeś, spróbuj mniejszą!"
     };
 
-
-    string difficulty;
     int maxNumber;
+    string difficultyName;
     bool extremeMode = false;
 
     switch (difficulty) {
-        case 1: maxNumber = 50; difficulty = LATWY; break;
-        case 2: maxNumber = 125; difficulty = SREDNI; break;
-        case 3: maxNumber = 250; difficulty = TRUDNY; break;
-        case 4: maxNumber = 250; extremeMode = true; difficulty = EXTREME; break;
+        case 1: maxNumber = 50; difficultyName = "LATWY"; break;
+        case 2: maxNumber = 125; difficultyName = "SREDNI"; break;
+        case 3: maxNumber = 250; difficultyName = "TRUDNY"; break;
+        case 4: maxNumber = 250; extremeMode = true; difficultyName = "EXTREME"; break;
         default:
             cout << "Nieprawidłowo wybrany poziom trudności! Spróbuj ponownie!\n";
             return;

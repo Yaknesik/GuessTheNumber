@@ -1,6 +1,15 @@
 #include <iostream>
+#include <fstream>
 #include "game.h"
+#include "top.h"
 using namespace std;
+
+bool AnyScores() {
+    ifstream file("wyniki.txt");
+    if(!file.is_open()) return false;
+    
+    return file.peek() != ifstream::traits_type::eof();
+}
 
 int main() {
     int select;
@@ -9,7 +18,11 @@ int main() {
         cout << "Wybierz jedną z poniższych opcji, wpisując cyfrę!\n";
         cout << "1. Rozpocznij grę\n";
         cout << "2. Instrukcja\n";
-        cout << "3. Wyjście\n";
+        
+        bool scoresExist = AnyScores();
+        if(scoresExist) cout << "3. TOP 5\n";
+        
+        cout << "4. Wyjście\n";
         cin >> select;
         
         if(!cin) {
@@ -43,13 +56,15 @@ int main() {
                 if(difficulty == 5) {
                     cout << string(100, '\n');
                     break;
+                } else if (difficulty >= 1 && difficulty <= 4) {
+                        startGame(difficulty);
                 } else {
-                   startGame(difficulty);
+                    break;
                 }
-                break;
-
             case 2:
                 cout << string(100, '\n');
+                
+                int select;
             
                 cout << "INSTRUKCJA GRY:\n";
                 cout << "Aby rozpocząć grę, należy wejść w \"Rozpocznij grę\"\n";
@@ -59,18 +74,22 @@ int main() {
 
                 cin >> select;
 
-                if(!cin) {
+                if(!cin || select != 1) {
                     cin.clear();
                     cin.ignore(1000, '\n');
                     cout << "Nieprawidłowa opcja! Spróbuj ponownie.\n";
                     continue;
+                } else if (select == 1) {
+                    cout << string(100, '\n');
+                    break;
                 }
-
-                cout << string(100, '\n');
-
-                break;
             
             case 3:
+                cout << string(100, '\n');
+                showTopMenu();
+                break;
+
+            case 4:
                 cout << "Wyjście z gry.";
                 return 0;
 
@@ -78,5 +97,5 @@ int main() {
                 cout << "Nieprawidłowa opcja! Wybierz ponownie.";
                 break;
         };
-    } while (select != 3);
+    } while (select != 4);
 };
