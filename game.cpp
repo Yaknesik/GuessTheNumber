@@ -36,14 +36,15 @@ void startGame(int difficulty) {
     };
 
 
+    string difficulty;
     int maxNumber;
     bool extremeMode = false;
 
     switch (difficulty) {
-        case 1: maxNumber = 50; break;
-        case 2: maxNumber = 125; break;
-        case 3: maxNumber = 250; break;
-        case 4: maxNumber = 250; extremeMode = true; break;
+        case 1: maxNumber = 50; difficulty = LATWY; break;
+        case 2: maxNumber = 125; difficulty = SREDNI; break;
+        case 3: maxNumber = 250; difficulty = TRUDNY; break;
+        case 4: maxNumber = 250; extremeMode = true; difficulty = EXTREME; break;
         default:
             cout << "Nieprawidłowo wybrany poziom trudności! Spróbuj ponownie!\n";
             return;
@@ -60,7 +61,6 @@ void startGame(int difficulty) {
     cin >> name;
 
     cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
-
 
     do {
         cout << "Próba nr " << tries << " Twój strzał: ";
