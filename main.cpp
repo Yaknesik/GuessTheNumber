@@ -58,31 +58,31 @@ int main() {
                     break;
                 } else if (difficulty >= 1 && difficulty <= 4) {
                         startGame(difficulty);
-                } else {
-                    break;
-                }
+                };
+
+                break; 
             case 2:
                 cout << string(100, '\n');
                 
-                int select;
-            
+                int instructionSelect;
+
                 cout << "INSTRUKCJA GRY:\n";
                 cout << "Aby rozpocząć grę, należy wejść w \"Rozpocznij grę\"\n";
                 cout << "Po czym wybrać poziom trudność i zgadnąć liczbę !\n";
                 cout << "TRYB EKSTREMALNY - W tym trybie, gracz zgaduje liczbę w zakresie od 1 do 250,\nprzy 5 nietrafionych liczba zgadywana ulega zmianie!\n";
                 cout << "1. Wyjście do menu!\n";
+            
+                do {
+                    cin >> instructionSelect;
 
-                cin >> select;
-
-                if(!cin || select != 1) {
-                    cin.clear();
-                    cin.ignore(1000, '\n');
-                    cout << "Nieprawidłowa opcja! Spróbuj ponownie.\n";
-                    continue;
-                } else if (select == 1) {
-                    cout << string(100, '\n');
-                    break;
-                }
+                    if(!cin || instructionSelect != 1) {
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        cout << "Nieprawidłowa opcja! Spróbuj ponownie.\n";
+                    };
+                } while (instructionSelect != 1);
+                cout << string(100, '\n');
+                break;
             
             case 3:
                 cout << string(100, '\n');

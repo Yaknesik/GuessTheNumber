@@ -55,10 +55,6 @@ void startGame(int difficulty) {
 
     int tries = 0;
 
-    cout << "\nPierw, podaj swoje imię: ";
-    string name;
-    cin >> name;
-
     cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
 
     do {
@@ -86,6 +82,10 @@ void startGame(int difficulty) {
             cout << tooHigh[randomHigh] << endl;
         } else {
             cout << "Brawo! Odgadnięto liczbę \"" << randomNumber << "\" w " << tries << " próbach!\n";
+            
+            cout << "\nPodaj swoje imię: ";
+            string name;
+            cin >> name;
 
             ofstream outFile("wyniki.txt", ios::app);
             if(outFile.is_open()) {
