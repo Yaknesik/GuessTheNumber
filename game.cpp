@@ -53,7 +53,7 @@ void startGame(int difficulty) {
 
     int guess;
 
-    int tries = 0;
+    int tries = 1;
 
     cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
 
@@ -101,4 +101,5 @@ void startGame(int difficulty) {
         }
 
     } while (guess != randomNumber);
+
 };
