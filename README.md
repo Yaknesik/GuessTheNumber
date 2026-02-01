@@ -58,12 +58,12 @@ g++ main.cpp game.cpp top.cpp -o GuessTheNumber
 
 ## Funkcjonalności
 
-✅ **Cztery poziomy trudności** - Różne zakresy liczb dla każdego poziomu
-✅ **Tryb Ekstremalny** - Dodatkowe wyzwanie z dynamiczną zmianą liczby
-✅ **Losowe wskazówki** - Różne komunikaty zachęcające do dalszej gry
-✅ **Ranking TOP 5** - Zapisywanie i wyświetlanie najlepszych wyników
-✅ **Walidacja danych** - Gra chroni przed błędnym wpisaniem danych
-✅ **Intuicyjny interfejs** - Łatwa do nauki i grania dla każdego
+- **Cztery poziomy trudności** - Różne zakresy liczb dla każdego poziomu
+- **Tryb Ekstremalny** - Dodatkowe wyzwanie z dynamiczną zmianą liczby
+- **Losowe wskazówki** - Różne komunikaty zachęcające do dalszej gry
+- **Ranking TOP 5** - Zapisywanie i wyświetlanie najlepszych wyników
+- **Walidacja danych** - Gra chroni przed błędnym wpisaniem danych
+- **Intuicyjny interfejs** - Łatwa do nauki i grania dla każdego
 
 ## Struktura projektu
 
