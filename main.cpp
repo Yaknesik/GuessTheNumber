@@ -38,8 +38,8 @@ int main() {
 
                 int difficulty;
                 cout << "Wybierz poziom trudnosci!\n";
-                cout << "1. latwy (1-50)\n";
-                cout << "2. sredni (1-125)\n";
+                cout << "1. Latwy (1-50)\n";
+                cout << "2. Sredni (1-125)\n";
                 cout << "3. Trudny (1-250)\n";
                 cout << "4. Ekstremalny (1-250 + reset zgadywanej liczby co 5 prob)\n";
                 cout << "5. Wyjscie do menu!\n";

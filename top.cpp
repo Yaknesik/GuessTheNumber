@@ -97,8 +97,8 @@ void showTopMenu() {
     int choice;
     do {
         cout << "\n===== MENU TOP 5 =====\n";
-        cout << "1. latwy\n";
-        cout << "2. sredni\n";
+        cout << "1. Latwy\n";
+        cout << "2. Sredni\n";
         cout << "3. Trudny\n";
         cout << "4. Extreme\n";
         cout << "5. Powrot do menu glownego\n";
