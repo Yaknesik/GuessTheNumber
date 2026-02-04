@@ -10,29 +10,29 @@ void startGame(int difficulty) {
 
 
     vector<string> tooLow {
-        "Za mało!",
-        "Spróbuj większą liczbę!",
+        "Za malo!",
+        "Sprobuj wieksza liczbe!",
         "Nie, to za niska liczba!",
-        "Więcej!",
-        "Podnieś wartość!",
-        "Nie trafione, jest za mało!",
-        "Jeszcze trochę większa!",
-        "Za mało, próbuj dalej!",
-        "Nie, liczba jest większa!",
-        "Nie zgadłeś, spróbuj większą!"
+        "Wiecej!",
+        "Podnies wartosc!",
+        "Nie trafione, jest za malo!",
+        "Jeszcze troche wieksza!",
+        "Za malo, probuj dalej!",
+        "Nie, liczba jest wieksza!",
+        "Nie zgadles, sprobuj wieksza!"
     };
 
     vector<string> tooHigh {
-        "Za dużo!",
-        "Spróbuj mniejszą liczbę!",
+        "Za duzo!",
+        "Sprobuj mniejsza liczbe!",
         "Nie, to zbyt wysoka liczba!",
         "Mniej!",
-        "Obniż wartość!",
-        "Nie trafione, jest za dużo!",
-        "Jeszcze trochę mniejsza!",
-        "Za dużo, próbuj dalej!",
-        "Nie, liczba jest niższa!",
-        "Nie zgadłeś, spróbuj mniejszą!"
+        "Obniz wartosc!",
+        "Nie trafione, jest za duzo!",
+        "Jeszcze troche mniejsza!",
+        "Za duzo, probuj dalej!",
+        "Nie, liczba jest nizsza!",
+        "Nie zgadles, sprobuj mniejsza!"
     };
 
     int maxNumber;
@@ -45,7 +45,7 @@ void startGame(int difficulty) {
         case 3: maxNumber = 250; difficultyName = "TRUDNY"; break;
         case 4: maxNumber = 250; extremeMode = true; difficultyName = "EXTREME"; break;
         default:
-            cout << "Nieprawidłowo wybrany poziom trudności! Spróbuj ponownie!\n";
+            cout << "Nieprawidlowo wybrany poziom trudnosci! Sprobuj ponownie!\n";
             return;
     }
 
@@ -55,19 +55,19 @@ void startGame(int difficulty) {
 
     int tries = 1;
 
-    cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbę w zakresie od 1 do " << maxNumber << "!\n";
+    cout << "\n\n\n\n\n\n\n\n\nZgadnij liczbe w zakresie od 1 do " << maxNumber << "!\n";
 
     do {
-        cout << "Próba nr " << tries << " Twój strzał: ";
+        cout << "Proba nr " << tries << " Twoj strzal: ";
         cin >> guess;
 
         if(!cin || guess <= 0 || guess > maxNumber) {
-            cout << "BŁĄD! Proszę wpisać tylko liczbę (nie używamy liter!), która jest w zakresie od 1 do" << maxNumber << "!\n";
+            cout << "BLAD! Prosze wpisac tylko liczbe (nie uzywamy liter!), ktora jest w zakresie od 1 do" << maxNumber << "!\n";
             cin.clear();
             cin.ignore(1000, '\n');
             if(extremeMode) {
                 tries++;
-                cout << "W trybie ekstremalnym, nawet pomyłki liczą się jako próby ;)!\n";
+                cout << "W trybie ekstremalnym, nawet pomylki licza sie jako proby ;)!\n";
             };
             continue;
         }
@@ -81,9 +81,9 @@ void startGame(int difficulty) {
             int randomHigh = rand() % tooHigh.size();
             cout << tooHigh[randomHigh] << endl;
         } else {
-            cout << "Brawo! Odgadnięto liczbę \"" << randomNumber << "\" w " << tries << " próbach!\n";
+            cout << "Brawo! Odgadnieto liczbe \"" << randomNumber << "\" w " << tries << " probach!\n";
             
-            cout << "\nPodaj swoje imię: ";
+            cout << "\nPodaj swoje imie: ";
             string name;
             cin >> name;
 
@@ -91,13 +91,13 @@ void startGame(int difficulty) {
             if(outFile.is_open()) {
                 outFile << difficulty << "," << tries << "," << name << endl;
                 outFile.close();
-                cout << "Wynik został zapisany!\n";
+                cout << "Wynik zostal zapisany!\n";
             }
         }
 
         if(extremeMode && tries % 5 == 0 && guess != randomNumber) {
             randomNumber = rand() % maxNumber + 1;
-            cout << "LICZBA ZOSTAŁA ZMIENIONA!!!\n";
+            cout << "LICZBA ZOSTALA ZMIENIONA!!!\n";
         }
 
     } while (guess != randomNumber);

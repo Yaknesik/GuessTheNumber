@@ -30,15 +30,15 @@ void showTopForDifficulty(vector<Score> scores, int difficulty) {
     int back;
 
     if(filtered.empty()) {
-        cout << "Brak wyników dla tego poziomu!\n\n";
+        cout << "Brak wynikow dla tego poziomu!\n\n";
         do {
-            cout << "Wciśnij 1 aby wrócić do menu: ";
+            cout << "Wcisnij 1 aby wrocic do menu: ";
             cin >> back;
     
             if(!cin) {
                 cin.clear();
                 cin.ignore(1000, '\n');
-                cout << "Nieprawidłowa opcja!\n";
+                cout << "Nieprawidlowa opcja!\n";
             }
     
         } while(back != 1);
@@ -54,18 +54,18 @@ void showTopForDifficulty(vector<Score> scores, int difficulty) {
     int limit = min(5, (int)filtered.size());
 
     for(int i = 0; i < limit; i++) {
-        cout << i+1 << ". " << filtered[i].name << " | Próby: " << filtered[i].tries << endl;
+        cout << i+1 << ". " << filtered[i].name << " | Proby: " << filtered[i].tries << endl;
     }
     cout << endl;
 
     do {
-        cout << "Wciśnij 1 aby wrócić do menu: ";
+        cout << "Wcisnij 1 aby wrocic do menu: ";
         cin >> back;
 
         if(!cin) {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "Nieprawidłowa opcja!\n";
+            cout << "Nieprawidlowa opcja!\n";
         }
 
     } while(back != 1);
@@ -76,7 +76,7 @@ void showTopForDifficulty(vector<Score> scores, int difficulty) {
 void showTopMenu() {
     ifstream file("wyniki.txt");
     if(!file.is_open()) {
-        cout << "Nie można otworzyć pliku wyników!\n";
+        cout << "Nie mozna otworzyc pliku wynikow!\n";
         return;
     }
 
@@ -90,24 +90,24 @@ void showTopMenu() {
     file.close();
 
     if(scores.empty()) {
-        cout << "Brak zapisanych wyników!\n";
+        cout << "Brak zapisanych wynikow!\n";
         return;
     }
 
     int choice;
     do {
         cout << "\n===== MENU TOP 5 =====\n";
-        cout << "1. Łatwy\n";
-        cout << "2. Średni\n";
+        cout << "1. latwy\n";
+        cout << "2. sredni\n";
         cout << "3. Trudny\n";
         cout << "4. Extreme\n";
-        cout << "5. Powrót do menu głównego\n";
+        cout << "5. Powrot do menu glownego\n";
         cin >> choice;
 
         if(!cin) {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "Nieprawidłowa opcja!\n";
+            cout << "Nieprawidlowa opcja!\n";
             continue;
         }
 
@@ -118,7 +118,7 @@ void showTopMenu() {
             cout << string(100, '\n');
             break;
         } else {
-            cout << "Nieprawidłowa opcja!\n";
+            cout << "Nieprawidlowa opcja!\n";
         }
 
     } while(true);

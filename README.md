@@ -14,7 +14,7 @@ Gra w C++ "Zgadnij liczbę!" - sprawdź swoje zdolności liczenia i intuicji!
 "Guess The Number" to interaktywna gra konsolowa, w której zadaniem gracza jest odgadnięcie sekretnej liczby. Gra oferuje cztery różne poziomy trudności i rejestruje wyniki w rankingu TOP 5.
 
 ## Wymagania systemowe
-- Kompilator C++ (np. g++, clang lub MSVC)
+- Kompilator C++ (np. g++, clang lub MSVC) [PORADNIK JAK ZAINSTALOWAĆ](https://www.youtube.com/watch?v=8CNRX1Bk5sY)
 - Podstawowa wiedza na temat pracy z terminalem/wierszem poleceń
 - Minimum 1 MB wolnego miejsca na dysku
 
